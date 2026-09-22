@@ -48,6 +48,8 @@ if [[ ! -x "$source_directory/objs/bin/mtproto-proxy" ]] ||
 	rm -rf "$temporary"
 fi
 
+chmod -R a+rX "$source_directory"
+
 install -d -o root -g mtproxy -m 0750 /etc/mtproxy
 secret_temp="$(mktemp /etc/mtproxy/proxy-secret.XXXXXX)"
 config_temp="$(mktemp /etc/mtproxy/proxy-multi.conf.XXXXXX)"
